@@ -23,31 +23,29 @@ export function UserShow() {
     <div>
       <h5>{user.name}'s Profile</h5>
       <img src={user.image_url} width="100" height="100" />
-
-      <h5>{user.name}'s Lists</h5>
-
-      <Link to={"/favorites/"+user.id}>{user.name}'s Favorites</Link>
+      <br/>
+      <h3>{user.name}'s Lists</h3>
 
       {user.lists?.map((list, idx) =>
       (
-          <li key={idx}> 
-          {list.list_title}
+          <div key={idx}> 
+          <Link to={`/lists/${list.id}`}>{list.list_title}</Link>
           <br/>
           <img src={list.list_image} width="200" height="200" />
           <br/>
           {list.list_desc}
           <br/>
-          </li>
+          </div>
       ))}
 
       <h5>{user.name}'s Reviews</h5>
 
      {user.reviews?.map((review, idx) =>
       (
-        <li key={idx}>
+        <div key={idx}>
            <p>Rating: {review.rating} <br />
            Comment: {review.review_body}</p>
-         </li>
+         </div>
       ))}
 
 

@@ -17,7 +17,7 @@ export function ItemsIndex(props) {
             {item.description}
             <br />
           
-          <img src={item.image_url} width="300" height="300" />
+          <Link to={"/items/"+item.id}><img src={item.image_url} width="300" height="300" /></Link>
            <br />
           <Link to={'/items/'+item.id}>Show More</Link>
         </div>
