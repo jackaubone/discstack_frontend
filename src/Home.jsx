@@ -5,8 +5,8 @@ import { ItemsIndex } from "./ItemsIndex";
 export function Home() {
 
   const [items, setItems] = useState([]);
-  const[isItemsShowVisible, setIsItemsShowVisible] = useState(false);
-  const[currentItem, setCurrentItem] = useState({});
+  // const[isItemsShowVisible, setIsItemsShowVisible] = useState(false);
+  // const[currentItem, setCurrentItem] = useState({});
 
   const handleIndexItems = () => {
     axios.get("http://localhost:3000/items.json").then((response) => {
@@ -15,8 +15,9 @@ export function Home() {
     });
   };
 
-  useEffect(handleIndexItems, []);
 
+  useEffect(handleIndexItems, []);
+  
   return (
     <div>
       <h1>Welcome to React!</h1>

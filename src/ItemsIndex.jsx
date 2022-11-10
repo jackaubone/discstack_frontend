@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export function ItemsIndex(props) {
 
@@ -7,13 +8,18 @@ export function ItemsIndex(props) {
       {props.items.map((item) => (
         <div key={item.id}>
           <h5>{item.name}</h5>
-          <p>
-            {item.artist} <br/>
-            {item.label} <br />
-            {item.release_date} <br />
-            {item.description}<br />
-          </p>
+            {item.artist} 
+            <br/>
+            {item.label} 
+            <br />
+            {item.release_date}
+            <br />
+            {item.description}
+            <br />
+          
           <img src={item.image_url} width="300" height="300" />
+           <br />
+          <Link to={'/items/'+item.id}>Show More</Link>
         </div>
       ))}
     </div>
