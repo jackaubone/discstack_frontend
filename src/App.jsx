@@ -8,6 +8,9 @@ import { UserIndex } from "./UserIndex"
 import { UserShow } from "./UserShow"
 import { ListIndex } from "./ListIndex"
 import { ListShow } from "./ListShow"
+import { DiscogTest } from "./DiscogTest"
+import { Signup } from "./Signup"
+import { ProfileShow } from "./ProfileShow"
 
 
 
@@ -25,9 +28,12 @@ function App() {
       <Route path="/users/:id" element={<UserShow />} />
       <Route path="/lists" element={<ListIndex />} />
       <Route path="/lists/:id" element={<ListShow />} />
+      <Route path="/discogtest" element={<DiscogTest />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<ProfileShow />} />
       {/* <Route path="/user/2" element={<UserShow />} /> */}
       {/* <Route path="/about" element={<About />} />
-      <Route path="/signup" element={<Signup />} />
+      
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<LogoutLink />} />
       <Route path="/new_product" element={<ItemsNew />} /> */}

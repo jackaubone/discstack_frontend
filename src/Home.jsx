@@ -20,7 +20,7 @@ export function Home() {
   
   return (
     <div>
-      <h1>Welcome to React!</h1>
+      <h1>DISCSTACK</h1>
       <ItemsIndex items={items} />
     </div>
   );

@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import axios from "axios"
 import { useState, useEffect } from "react"
+import { UserShow } from "./UserShow";
 
 export function ListIndex(){
 
@@ -21,7 +22,7 @@ export function ListIndex(){
       {lists.map((list) => (
         <div key={list.id}>
           <li>
-          <Link to={"/lists/"+list.id}>{list.list_title}</Link>
+          <Link to={"/lists/"+list.id}>{list.list_title}</Link> by <Link to={"/users/"+list.user_id}>{list.author.name}</Link>
           <br/>
           <Link to={"/lists/"+list.id}><img src={list.list_image} width="200" height="200"/></Link>
           <br/><br/>

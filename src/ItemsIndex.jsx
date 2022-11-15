@@ -4,7 +4,7 @@ export function ItemsIndex(props) {
 
   return (
     <div id="items-index">
-      <h1>Index</h1>
+      <h2>All</h2>
       {props.items.map((item) => (
         <div key={item.id}>
           <h5>{item.name}</h5>

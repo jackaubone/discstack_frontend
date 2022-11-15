@@ -22,7 +22,7 @@ export function ListShow() {
   return (
     <div> 
           <br/>
-          {list.list_title}
+          {list.list_title} by <Link to={"/users/" + list.user_id}>{list.author.name}</Link>
           <br/>
           <img src={list.list_image} width="200" height="200" />
           <br/>
