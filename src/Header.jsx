@@ -17,7 +17,7 @@ export function Header() {
   return (
     <header>
       
-      <nav className="navbar d-flex justify-content-start navbar-light bg-light">
+      <nav className="navbar d-flex justify-content-start navbar-light bg-black bg-gradient">
 
           <div className="navbar-brand">
           <Link className="nav-item" to="/">Home</Link> 

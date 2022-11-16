@@ -1,3 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+#root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+
+  background-image: url('./assets/Free-Professional-Dark-Carbon-Patterns.jpg');
+  background-size: cover;
+}
