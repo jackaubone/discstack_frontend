@@ -8,7 +8,7 @@ Discstack is a web app for organizing and saving your favorite albums
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use node.js and react, and use github to clone the repository.
 
 ```bash
 npm install 
