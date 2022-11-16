@@ -31,12 +31,6 @@ function App() {
       <Route path="/discogtest" element={<DiscogTest />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<ProfileShow />} />
-      {/* <Route path="/user/2" element={<UserShow />} /> */}
-      {/* <Route path="/about" element={<About />} />
-      
-      <Route path="/login" element={<Login />} />
-      <Route path="/logout" element={<LogoutLink />} />
-      <Route path="/new_product" element={<ItemsNew />} /> */}
     </Routes>
     <Footer />
   </BrowserRouter>
