@@ -1,11 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Modal } from "./Modal";
+import {ListAdd} from "./ListAdd";
 
 export function ItemShow() {
 
   let { id } = useParams();
   const [item, setItem] = useState({});
+  const [isListAddVisible, setIsListAddVisible] = useState(false);
 
   const handleShowItem = () => {
     console.log(id)
@@ -39,6 +42,12 @@ export function ItemShow() {
       <br/>
       <img src={item.image_url} />
       <br/>
+
+      <a href="#" className="btn btn-primary" onClick={() => setIsListAddVisible(true)}> Add To List </a>
+      <br/>
+      <Modal show={isListAddVisible} onClose={() => setIsListAddVisible(false)}>
+        <ListAdd item={item} />
+      </Modal>
    
       Reviews &#40;{item.review_count}&#41; :{item.reviews?.map((review, idx) => (
          <p key={idx}> 

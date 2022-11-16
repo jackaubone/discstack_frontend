@@ -2,20 +2,23 @@ import {Link} from "react-router-dom";
 import axios from "axios"
 import { useState, useEffect } from "react"
 
+
+
 export function DiscogTest() {
 
-  const [discs, setDiscs] = useState([]);
+  const p4k = require('pitchfork-bnm');
 
-  const handleIndexDiscs = () => {
-    axios.get("https://api.discogs.com/releases/249504", { headers: {"User-Agent": 'FooBarApp/3.0'}}).then((response) => {
+  const [pitchfork, setPitchfork] = useState([]);
+
+  const handleIndexPitchfork = () => {
+    axios.get("https://pitchfork.com/reviews/albums").then((response) => {
       console.log(response.data);
-      setDiscs(response.data);
+      setList(response.data);
     });
   };
+    
 
-  useEffect(handleIndexDiscs, [])
-
-
+  useEffect(handleIndexPitchfork, [])
 
 
 }

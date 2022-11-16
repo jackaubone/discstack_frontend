@@ -23,7 +23,7 @@ export function UserIndex(){
         <p>
           <Link to={"/users/"+user.id}>{user.name}</Link>
           <br/>
-          <img src={user.image_url} width="100" height="100"/>
+          <Link to={"/users/"+user.id}><img src={user.image_url} width="100" height="100"/> </Link>
           </p>
         </div>
       ))}

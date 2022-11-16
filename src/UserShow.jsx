@@ -7,6 +7,7 @@ export function UserShow() {
 
   let { id } = useParams();
   const [user, setUser] = useState({});
+  const user_id = localStorage.getItem("user_id");
 
   const handleShowUser = () => {
     console.log(id)
@@ -15,8 +16,13 @@ export function UserShow() {
       setUser(response.data);
     });
   };
+  if (id === user_id){
+    window.location.href = "/profile";
+  } else {
+    useEffect(handleShowUser, []);
+  }
   
-  useEffect(handleShowUser, []);
+
 
   return (
     
@@ -31,7 +37,8 @@ export function UserShow() {
           <div key={idx}> 
           <Link to={`/lists/${list.id}`}>{list.list_title}</Link>
           <br/>
-          <img src={list.list_image} width="200" height="200" />
+          <Link to={`/lists/${list.id}`}><img src={list.list_image} width="200" height="200" /></Link>
+          
           <br/>
           {list.list_desc}
           <br/>
