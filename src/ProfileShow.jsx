@@ -62,36 +62,51 @@ export function ProfileShow() {
 
   return (
       
-    <div>
-      <h5>{profile.name}'s Profile</h5>
-      <img src={profile.image_url} width="100" height="100" />
-      <br/>
-      <h3>Your Lists</h3>
+    <div className='card bg-dark'>
+    <div className='card-body'>
+    <h3 className='card-title'>Your Profile</h3>
+    <div className='card-img-top mb-4'>
+    <img src={profile.image_url} width="100" height="100" />
+    </div>
 
-      <a href="#" className="btn btn-primary" onClick={() => setIsListNewVisible(true)}>New List</a>
+      <div className='card bg-dark'>
+      <h3 className='card-title'>Your Lists</h3>
+      <div className="row">
+
+  
+      <a href="#" className="btn text-light border-light  mb-4" onClick={() => setIsListNewVisible(true)}>New List</a>
 
 
       <Modal show={isListNewVisible} onClose={() => setIsListNewVisible(false)}>
         <ListNew />
       </Modal>
 
-
+      
       {showedLists?.map((list, idx) =>
       (
-          <div key={idx}> 
-          <Link to={`/lists/${list.id}`}>{list.list_title}</Link>
 
-          <a href="#" className="btn btn-primary" onClick={() => handleShowListEdit(idx)}>Edit List</a>
+          <div key={idx} className="card col-sm-3 bg-dark"> 
+          <div className="card-header text-center">
+          <Link to={`/lists/${list.id}`} className="btn text-light border-light">{list.list_title}</Link>
+          </div>
+
+          <div className="card-img-top text-center mb-4">
+          <Link to={`/lists/${list.id}`}> <img src={list.list_image} width="200" height="200" /> </Link>
+          </div>
+          
+          <div className="card-body text-center">
+          {list.list_desc}
+          </div>
+
+          <div>
+          <a href="#" className="btn text-light border-light w-100" onClick={() => handleShowListEdit(idx)}>Edit List</a>
+          </div>
 
           <Modal show={isListEditVisible} onClose={() => setIsListEditVisible(false)}>
             <ListEdit list={currentList} onUpdateList={handleUpdateList} onDestroyList={handleDestroyList}/>
           </Modal>
 
-          <br/>
-          <Link to={`/lists/${list.id}`}> <img src={list.list_image} width="200" height="200" /> </Link>
-          <br/>
-          {list.list_desc}
-          <br/>
+        
           </div>
       ))}
 
@@ -104,8 +119,9 @@ export function ProfileShow() {
           Comment: {review.review_body}</p>
         </div>
       ))}
-
-
+    </div>
+    </div>
+    </div>
     </div>
   )
   }

@@ -19,8 +19,10 @@ export function ListIndex(){
   return(
     <div id="lists-index">
       <h3> Lists </h3>  
+
+      <div className="row">
       {lists.map((list) => (
-        <div key={list.id}>
+        <div key={list.id} className="card bg-dark col-sm-3">
           <li>
           <Link to={"/lists/"+list.id}>{list.list_title}</Link> by <Link to={"/users/"+list.user_id}>{list.author.name}</Link>
           <br/>
@@ -30,6 +32,8 @@ export function ListIndex(){
         </div>
 
       ))}
+    </div>
+
     </div>
   )
 

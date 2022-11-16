@@ -26,24 +26,39 @@ export function UserShow() {
 
   return (
     
-    <div>
-      <h5>{user.name}'s Profile</h5>
+    <div className='card bg-dark'>
+      <div className='card-body'>
+      <h3 className='card-title'>{user.name}'s Profile</h3>
+      <div className='card-img-top'>
       <img src={user.image_url} width="100" height="100" />
-      <br/>
-      <h3>{user.name}'s Lists</h3>
+      </div>
 
+
+      
+      <div className='card bg-dark'>
+        
+      <h3 className='card-title'>{user.name}'s Lists</h3>
+      <div className='row'>
+      
       {user.lists?.map((list, idx) =>
-      (
-          <div key={idx}> 
-          <Link to={`/lists/${list.id}`}>{list.list_title}</Link>
-          <br/>
-          <Link to={`/lists/${list.id}`}><img src={list.list_image} width="200" height="200" /></Link>
+      (   
           
-          <br/>
-          {list.list_desc}
-          <br/>
+          <div key={idx} className="card col-sm-3 bg-dark"> 
+          <div className='card-img-top text-center'>
+          <Link to={`/lists/${list.id}`}><img src={list.list_image} width="200" height="200" /></Link>
           </div>
+          <div className='text-center'>
+          <Link to={`/lists/${list.id}`} className="btn text-light border-light w-20">{list.list_title}</Link>
+          </div>
+          <div className='card-footer text-center'>
+          {list.list_desc}
+          </div>
+          </div>
+          
       ))}
+      </div>
+      
+      </div>
 
       <h5>{user.name}'s Reviews</h5>
 
@@ -55,7 +70,7 @@ export function UserShow() {
          </div>
       ))}
 
-
+        </div>
     </div>
   )
 }

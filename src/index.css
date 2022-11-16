@@ -7,5 +7,6 @@ html {
   color: aliceblue;
 
   background-image: url('./assets/Free-Professional-Dark-Carbon-Patterns.jpg');
-  background-size: cover;
+  background-size: auto;
+  height: 100%;
 }

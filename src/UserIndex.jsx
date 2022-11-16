@@ -16,17 +16,21 @@ export function UserIndex(){
   useEffect(handleIndexUsers, []);
  
   return (
-    <div>
+    <div className="row">
       <h3>All Users</h3>
       {users.map((user) => (
-        <div key={user.id}> 
-        <p>
-          <Link to={"/users/"+user.id}>{user.name}</Link>
-          <br/>
-          <Link to={"/users/"+user.id}><img src={user.image_url} width="100" height="100"/> </Link>
-          </p>
-        </div>
+        <div key={user.id} className="card bg-dark col-sm-3"> 
+         <div className="card-img-top text-center">
+          <Link to={"/users/"+user.id}><img src={user.image_url} width="200" height="200"/> </Link>
+          </div>
+          <div className="card-body text-center">
+          <Link to={"/users/"+user.id} className="btn btn-lg text-light border-light w-100">{user.name}</Link>
+
+          </div>
+          </div>
+          
       ))}
+    <div className="mb-4"></div>
     </div>
   )
 

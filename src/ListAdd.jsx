@@ -50,7 +50,7 @@ export function ListAdd(props) {
       )}
       </select>
       </label>
-      <input type="submit" value="Create" />
+      <input type="submit" value="Add" className="btn text-light border-light" />
       </form>
 
 {/* 
